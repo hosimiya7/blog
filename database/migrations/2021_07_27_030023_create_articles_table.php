@@ -14,7 +14,10 @@ class CreateArticlesTable extends Migration
     public function up()
     {
         Schema::create('articles', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id')->comment('主キー');
+            $table->string('title')->comment('タイトル');
+            $table->text('content')->comment('投稿内容');
+            $table->unsignedBigInteger('category_id')->comment('カテゴリー振り分け用のid')->nullable(true)->default(null);
             $table->timestamps();
         });
     }
