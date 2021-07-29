@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// urlの作成、どこのコントローラに行くか
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', 'ArticleController@index')->name('article.index');
+Route::get('/article/create', 'ArticleController@create')->name('article.create');
+Route::post('/article', 'ArticleController@store')->name('article.store');
