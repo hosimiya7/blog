@@ -8,9 +8,9 @@
 
     @endif
 
-    <a href="{{route('article.index')}}">記事一覧</a>
+    <a href="{{ route('article.index') }}">記事一覧</a>
 
-    <form action="{{route('article.store')}}" method="POST">
+    <form action="{{ route('article.store') }}" method="POST">
         @csrf
         <input class="title" type="text">
         <textarea name="content" id="" cols="30" rows="10"></textarea>
@@ -19,4 +19,3 @@
     </form>
 
 @endsection
-
